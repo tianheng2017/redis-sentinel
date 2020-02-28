@@ -1,4 +1,4 @@
-# docker-compose一键模拟简易redis哨兵集群  
+# docker-compose搭建简易redis哨兵集群  
 
 ## 说明  
 本项目为最简易的1主2从3哨兵架构，仅供新手学习  
