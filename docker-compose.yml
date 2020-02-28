@@ -1,0 +1,64 @@
+version: '3.4'
+services:
+  master:
+    image: redis
+    container_name: redis-master
+    restart: always
+    command: redis-server --bind 0.0.0.0 --protected-mode no --port 7000 --daemonize no --requirepass wobuzhidaomima --masterauth wobuzhidaomima --appendonly yes --logfile "redis.log" --dir ./
+    ports:
+        - 7000:7000
+    volumes:
+        - ./data7000:/data
+
+  slave1:
+    image: redis
+    container_name: redis-slave1
+    restart: always
+    command: redis-server --bind 0.0.0.0 --protected-mode no --slaveof 122.51.97.149 7000 --port 7001 --daemonize no --requirepass wobuzhidaomima --masterauth wobuzhidaomima --appendonly yes --logfile "redis.log" --dir ./
+    ports:
+        - 7001:7001
+    volumes:
+        - ./data7001:/data
+
+  slave2:
+    image: redis
+    container_name: redis-slave2
+    restart: always
+    command: redis-server --bind 0.0.0.0 --protected-mode no --slaveof 122.51.97.149 7000 --port 7002 --daemonize no --requirepass wobuzhidaomima --masterauth wobuzhidaomima --appendonly yes --logfile "redis.log" --dir ./
+    ports:
+        - 7002:7002
+    volumes:
+        - ./data7002:/data
+  sentinel1:
+    image: redis
+    container_name: sentinel1
+    restart: always
+    command: redis-sentinel /etc/redis/sentinel.conf
+    ports:
+        - 26379:26379
+    volumes:
+        - ./sentinel26379:/data
+        - ./sentinel26379.conf:/etc/redis/sentinel.conf
+        
+  sentinel2:
+    image: redis
+    container_name: sentinel2
+    restart: always
+    command: redis-sentinel /etc/redis/sentinel.conf
+    ports:
+        - 26380:26380
+    volumes:
+        - ./sentinel26380:/data
+        - ./sentinel26380.conf:/etc/redis/sentinel.conf
+        
+  sentinel3:
+    image: redis
+    container_name: sentinel3
+    restart: always
+    command: redis-sentinel /etc/redis/sentinel.conf
+    ports:
+        - 26381:26381
+    volumes:
+        - ./sentinel26381:/data
+        - ./sentinel26381.conf:/etc/redis/sentinel.conf
+        
