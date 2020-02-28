@@ -8,7 +8,7 @@ data7000、data7001、data7002分别为三台主从节点存放持久化文件�
 sentinel26379、sentinel26380、sentinel26381分别为三台哨兵节点存放日志的目录  
 
 ## 修改文件  
-分别**搜索修改**文件docker-compose.yml、sentinel26379.conf、sentinel26380.conf、sentinel26381.conf中的**x.x.x.x**为你的服务器IP，修改mypassword为您的redis密码  
+分别**查找替换**文件docker-compose.yml、sentinel26379.conf、sentinel26380.conf、sentinel26381.conf中的**x.x.x.x**为你的服务器IP，修改mypassword为您的redis密码  
 
 ## 启动集群  
 docker-compose up -d  
