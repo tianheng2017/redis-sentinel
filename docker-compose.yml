@@ -14,7 +14,7 @@ services:
     image: redis
     container_name: redis-slave1
     restart: always
-    command: redis-server --bind 0.0.0.0 --protected-mode no --slaveof 122.51.97.149 7000 --port 7001 --daemonize no --requirepass wobuzhidaomima --masterauth wobuzhidaomima --appendonly yes --logfile "redis.log" --dir ./
+    command: redis-server --bind 0.0.0.0 --protected-mode no --slaveof x.x.x.x 7000 --port 7001 --daemonize no --requirepass wobuzhidaomima --masterauth wobuzhidaomima --appendonly yes --logfile "redis.log" --dir ./
     ports:
         - 7001:7001
     volumes:
@@ -24,7 +24,7 @@ services:
     image: redis
     container_name: redis-slave2
     restart: always
-    command: redis-server --bind 0.0.0.0 --protected-mode no --slaveof 122.51.97.149 7000 --port 7002 --daemonize no --requirepass wobuzhidaomima --masterauth wobuzhidaomima --appendonly yes --logfile "redis.log" --dir ./
+    command: redis-server --bind 0.0.0.0 --protected-mode no --slaveof x.x.x.x 7000 --port 7002 --daemonize no --requirepass wobuzhidaomima --masterauth wobuzhidaomima --appendonly yes --logfile "redis.log" --dir ./
     ports:
         - 7002:7002
     volumes:
