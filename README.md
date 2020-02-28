@@ -11,11 +11,10 @@ sentinel26379、sentinel26380、sentinel26381分别为三台哨兵节点存放�
 分别修改docker-compose.yml、sentinel26379.conf、sentinel26380.conf、sentinel26381.conf中的**x.x.x.x**为你的服务器IP  
 
 ## 启动集群  
-cd redis-sentinel  
 docker-compose up -d  
 
-## 故障转移测试  
-故意关闭主节点：docker rm -f redis-master  
+## 故障自动转移测试  
+关闭主节点：docker rm -f redis-master  
 查看哨兵日志，可以找到已选举出新master节点的日志记录  
 登录新master节点redis，执行**info**命令验证是否为master身份  
 
