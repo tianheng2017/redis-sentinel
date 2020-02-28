@@ -14,7 +14,7 @@ sentinel26379、sentinel26380、sentinel26381分别为三台哨兵节点存放�
 docker-compose up -d  
 
 ## 故障自动转移测试  
-关闭主节点：docker rm -f redis-master  
+关闭master节点：docker rm -f redis-master  
 查看哨兵日志，可以找到已经选举出新master的日志记录  
 登录新master的redis，执行**info**命令验证是否为master身份  
 启动被关闭的老master：docker-compose up，对老master执行**info**命令会发现身份变成了slave
