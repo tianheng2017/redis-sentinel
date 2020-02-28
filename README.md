@@ -15,8 +15,8 @@ docker-compose up -d
 
 ## 故障自动转移测试  
 关闭主节点：docker rm -f redis-master  
-查看哨兵日志，可以找到已选举出新master节点的日志记录  
-登录新master节点redis，执行**info**命令验证是否为master身份  
+查看哨兵日志，可以找到已经选举出新master的日志记录  
+登录新master的redis，执行**info**命令验证是否为master身份  
 
 ## 关闭集群  
 docker-compose down
