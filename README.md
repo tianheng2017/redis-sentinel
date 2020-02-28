@@ -27,4 +27,4 @@ docker-compose down
 ```
 
 ## 注意事项
-测试过一次故障转移后，重新启动老master会以slave的身份重新链接到新master，因此再次测试故障转移时，需要关闭的是新master容器，在关闭master节点前最好用info命令确认哪个才是master  
+测试过一次故障转移后，重新启动老master会以slave的身份重新链接到新master，因此再次测试故障转移时，需要关闭的是新master容器，在关闭master节点前最好查看哨兵日志或用info命令确认哪个才是master  
