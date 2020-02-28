@@ -22,4 +22,4 @@ docker-compose up -d
 docker-compose down
 
 ## 注意事项
-测试过一次故障转移后，重新启动老master他会以从节点的身份链接到新master，再次测试故障转移需要关闭的是新master，所以测试前最好用info命令确认哪个才是master
+测试过一次故障转移后，重新启动老master后会以从节点的身份链接到新master，再次测试故障转移需要关闭的是新master容器，所以测试前最好用info命令确认哪个才是master
